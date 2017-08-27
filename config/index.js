@@ -24,7 +24,7 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     //port: 8080, //occupied by GeoServer
-	port: 8000,
+	  port: 8000,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

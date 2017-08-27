@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="app" >
-    <h1>{{title}}</h1>
+    <h1 class="title">{{title}}</h1>
     <input v-model="newtodo" @keyup.enter="addNew" placeholder="do what"
     class="app-input">
-    <ul>
+    <ul class="ulist">
       <li
       v-for = "(item, index) in todolist"
       @mouseenter="showDelete(item)"
@@ -15,8 +15,8 @@
       <span class="item-label" :class="{finished: item.isfinished}"
       @click = "toggleFinish(item)">
         {{ index + 1 }} . {{ item.text }}</span>
-      <span class="status" v-if="item.isfinished">finished</span>
-      <span class="item-delete" v-if="item.candelete"
+      <span class="status" v-show="item.isfinished">finished</span>
+      <span class="item-delete" v-show="item.candelete"
       @click="deleteClick(index)">Delete</span>
       </h3>
     </li>
@@ -61,10 +61,10 @@ export default {
   },
   watch:{
     todolist: {
-      handler:function(val){ Store.save(val) },
+      handler:function(val){
+        Store.save(val) },
       deep: true
     }
-
   }
 }
 </script>
@@ -74,10 +74,18 @@ export default {
   width: 800px;
   margin: 30px auto;
 }
+.title{
+  margin-left: 100px;
+}
 .app-input{
-  width: 750px;
+  /*width: 750px;*/
+  width: 70%;
+  margin-left: 100px;
   height: 35px;
   padding: 0 5px;
+}
+.ulist{
+  margin-left: 100px;
 }
 .finished{
   text-decoration: line-through;

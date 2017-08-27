@@ -21,9 +21,6 @@ export default {
 </script>
 
 <style>
-.finished{
-  text-decoration: line-through;
-}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
